@@ -4,6 +4,7 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import { initializeTheme } from '@/hooks/use-appearance';
 import AppLayout from '@/layouts/app-layout';
 import AuthLayout from '@/layouts/auth-layout';
+import AuthSplitLayout from '@/layouts/auth/auth-split-layout';
 import SettingsLayout from '@/layouts/settings/layout';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
@@ -13,9 +14,18 @@ createInertiaApp({
     layout: (name) => {
         switch (true) {
             case name === 'welcome':
+            case name === 'about':
+            case name === 'academics':
+            case name === 'facilities':
+            case name === 'news':
+            case name === 'ppdb':
                 return null;
+            case name === 'auth/login':
+                return [AuthSplitLayout, { imageSide: 'left' as const }];
+            case name === 'auth/register':
+                return [AuthSplitLayout, { imageSide: 'right' as const }];
             case name.startsWith('auth/'):
-                return AuthLayout;
+                return [AuthSplitLayout, { imageSide: 'left' as const }];
             case name.startsWith('settings/'):
             case name.startsWith('teams/'):
                 return [AppLayout, SettingsLayout];

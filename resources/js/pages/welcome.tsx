@@ -18,7 +18,7 @@ export default function Welcome() {
                 <header className="relative h-[800px] flex items-center overflow-hidden">
                     <div className="absolute inset-0 z-0">
                         <img
-                            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop"
+                            src="https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&w=1920"
                             alt="University Campus"
                             className="w-full h-full object-cover scale-105"
                         />
@@ -103,7 +103,7 @@ export default function Welcome() {
                         <div className="relative">
                             <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
                                 <img
-                                    src="https://images.unsplash.com/photo-1544717297-fa154daaf76e?q=80&w=2070&auto=format&fit=crop"
+                                    src="https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=800"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
@@ -224,7 +224,7 @@ export default function Welcome() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <div className="group relative h-80 overflow-hidden rounded-2xl">
                             <img
-                                src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=2070&auto=format&fit=crop"
+                                src="https://images.pexels.com/photos/1370298/pexels-photo-1370298.jpeg?auto=compress&cs=tinysrgb&w=800"
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0F2A47]/90 to-transparent flex items-end p-6">
@@ -233,7 +233,7 @@ export default function Welcome() {
                         </div>
                         <div className="group relative h-80 overflow-hidden rounded-2xl">
                             <img
-                                src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=2086&auto=format&fit=crop"
+                                src="https://images.pexels.com/photos/2280523/pexels-photo-2280523.jpeg?auto=compress&cs=tinysrgb&w=800"
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0F2A47]/90 to-transparent flex items-end p-6">
@@ -242,7 +242,7 @@ export default function Welcome() {
                         </div>
                         <div className="group relative h-80 overflow-hidden rounded-2xl">
                             <img
-                                src="https://images.unsplash.com/photo-1541829070764-84a7d30dee63?q=80&w=2070&auto=format&fit=crop"
+                                src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=800"
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0F2A47]/90 to-transparent flex items-end p-6">
@@ -251,7 +251,7 @@ export default function Welcome() {
                         </div>
                         <div className="group relative h-80 overflow-hidden rounded-2xl">
                             <img
-                                src="https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2090&auto=format&fit=crop"
+                                src="https://images.pexels.com/photos/209977/pexels-photo-209977.jpeg?auto=compress&cs=tinysrgb&w=800"
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0F2A47]/90 to-transparent flex items-end p-6">

@@ -21,14 +21,17 @@ export default function VerifyEmail({ status }: { status?: string }) {
             <Form {...send.form()} className="space-y-6 text-center">
                 {({ processing }) => (
                     <>
-                        <Button disabled={processing} variant="secondary">
+                        <Button
+                            disabled={processing}
+                            className="bg-[#DC143C] hover:bg-red-700 text-white font-semibold"
+                        >
                             {processing && <Spinner />}
                             Resend verification email
                         </Button>
 
                         <TextLink
                             href={logout()}
-                            className="mx-auto block text-sm"
+                            className="mx-auto block text-sm text-[#1F5A96] font-semibold hover:text-[#0F2A47]"
                         >
                             Log out
                         </TextLink>
@@ -39,8 +42,8 @@ export default function VerifyEmail({ status }: { status?: string }) {
     );
 }
 
-VerifyEmail.layout = {
+VerifyEmail.layout = () => ({
     title: 'Email verification',
     description:
         'Please verify your email address by clicking on the link we just emailed to you.',
-};
+});

@@ -36,8 +36,10 @@ export default function Register({ passwordRules, teamInvitation }: Props) {
                         )}
 
                         <div className="grid gap-6">
-                            <div className="grid gap-2">
-                                <Label htmlFor="name">Name</Label>
+                            <div className="grid gap-3">
+                                <Label htmlFor="name" className="text-[#0F2A47] font-semibold">
+                                    Name
+                                </Label>
                                 <Input
                                     id="name"
                                     type="text"
@@ -47,6 +49,7 @@ export default function Register({ passwordRules, teamInvitation }: Props) {
                                     autoComplete="name"
                                     name="name"
                                     placeholder="Full name"
+                                    className="border-slate-300 focus:border-[#1F5A96] focus:ring-[#1F5A96]"
                                 />
                                 <InputError
                                     message={errors.name}
@@ -54,8 +57,10 @@ export default function Register({ passwordRules, teamInvitation }: Props) {
                                 />
                             </div>
 
-                            <div className="grid gap-2">
-                                <Label htmlFor="email">Email address</Label>
+                            <div className="grid gap-3">
+                                <Label htmlFor="email" className="text-[#0F2A47] font-semibold">
+                                    Email address
+                                </Label>
                                 <Input
                                     id="email"
                                     type="email"
@@ -64,12 +69,15 @@ export default function Register({ passwordRules, teamInvitation }: Props) {
                                     autoComplete="email"
                                     name="email"
                                     placeholder="email@example.com"
+                                    className="border-slate-300 focus:border-[#1F5A96] focus:ring-[#1F5A96]"
                                 />
                                 <InputError message={errors.email} />
                             </div>
 
-                            <div className="grid gap-2">
-                                <Label htmlFor="password">Password</Label>
+                            <div className="grid gap-3">
+                                <Label htmlFor="password" className="text-[#0F2A47] font-semibold">
+                                    Password
+                                </Label>
                                 <PasswordInput
                                     id="password"
                                     required
@@ -78,12 +86,13 @@ export default function Register({ passwordRules, teamInvitation }: Props) {
                                     name="password"
                                     placeholder="Password"
                                     passwordrules={passwordRules}
+                                    className="border-slate-300 focus:border-[#1F5A96] focus:ring-[#1F5A96]"
                                 />
                                 <InputError message={errors.password} />
                             </div>
 
-                            <div className="grid gap-2">
-                                <Label htmlFor="password_confirmation">
+                            <div className="grid gap-3">
+                                <Label htmlFor="password_confirmation" className="text-[#0F2A47] font-semibold">
                                     Confirm password
                                 </Label>
                                 <PasswordInput
@@ -94,6 +103,7 @@ export default function Register({ passwordRules, teamInvitation }: Props) {
                                     name="password_confirmation"
                                     placeholder="Confirm password"
                                     passwordrules={passwordRules}
+                                    className="border-slate-300 focus:border-[#1F5A96] focus:ring-[#1F5A96]"
                                 />
                                 <InputError
                                     message={errors.password_confirmation}
@@ -102,7 +112,7 @@ export default function Register({ passwordRules, teamInvitation }: Props) {
 
                             <Button
                                 type="submit"
-                                className="mt-2 w-full"
+                                className="mt-2 w-full bg-[#DC143C] hover:bg-red-700 text-white font-semibold py-2.5"
                                 tabIndex={5}
                                 data-test="register-user-button"
                             >
@@ -111,7 +121,7 @@ export default function Register({ passwordRules, teamInvitation }: Props) {
                             </Button>
                         </div>
 
-                        <div className="text-center text-sm text-muted-foreground">
+                        <div className="text-center text-sm text-slate-600">
                             Already have an account?{' '}
                             <TextLink
                                 href={
@@ -126,6 +136,7 @@ export default function Register({ passwordRules, teamInvitation }: Props) {
                                 }
                                 data-test="team-invitation-login-link"
                                 tabIndex={6}
+                                className="text-[#1F5A96] font-semibold hover:text-[#0F2A47]"
                             >
                                 Log in
                             </TextLink>
@@ -137,7 +148,7 @@ export default function Register({ passwordRules, teamInvitation }: Props) {
     );
 }
 
-Register.layout = {
+Register.layout = () => ({
     title: 'Create an account',
     description: 'Enter your details below to create your account',
-};
+});

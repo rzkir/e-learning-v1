@@ -29,14 +29,17 @@ export default function ConfirmPassword() {
             <Form {...store.form()} resetOnSuccess={['password']}>
                 {({ processing, errors }) => (
                     <div className="space-y-6">
-                        <div className="grid gap-2">
-                            <Label htmlFor="password">Password</Label>
+                        <div className="grid gap-3">
+                            <Label htmlFor="password" className="text-[#0F2A47] font-semibold">
+                                Password
+                            </Label>
                             <PasswordInput
                                 id="password"
                                 name="password"
                                 placeholder="Password"
                                 autoComplete="current-password"
                                 autoFocus
+                                className="border-slate-300 focus:border-[#1F5A96] focus:ring-[#1F5A96]"
                             />
 
                             <InputError message={errors.password} />
@@ -44,7 +47,7 @@ export default function ConfirmPassword() {
 
                         <div className="flex items-center">
                             <Button
-                                className="w-full"
+                                className="w-full bg-[#DC143C] hover:bg-red-700 text-white font-semibold py-2.5"
                                 disabled={processing}
                                 data-test="confirm-password-button"
                             >
@@ -59,8 +62,8 @@ export default function ConfirmPassword() {
     );
 }
 
-ConfirmPassword.layout = {
+ConfirmPassword.layout = () => ({
     title: 'Confirm password',
     description:
         'This is a secure area of the application. Please confirm your password before continuing.',
-};
+});

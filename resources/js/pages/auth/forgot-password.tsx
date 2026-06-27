@@ -24,8 +24,10 @@ export default function ForgotPassword({ status }: { status?: string }) {
                 <Form {...email.form()}>
                     {({ processing, errors }) => (
                         <>
-                            <div className="grid gap-2">
-                                <Label htmlFor="email">Email address</Label>
+                            <div className="grid gap-3">
+                                <Label htmlFor="email" className="text-[#0F2A47] font-semibold">
+                                    Email address
+                                </Label>
                                 <Input
                                     id="email"
                                     type="email"
@@ -33,6 +35,7 @@ export default function ForgotPassword({ status }: { status?: string }) {
                                     autoComplete="off"
                                     autoFocus
                                     placeholder="email@example.com"
+                                    className="border-slate-300 focus:border-[#1F5A96] focus:ring-[#1F5A96]"
                                 />
 
                                 <InputError message={errors.email} />
@@ -40,7 +43,7 @@ export default function ForgotPassword({ status }: { status?: string }) {
 
                             <div className="my-6 flex items-center justify-start">
                                 <Button
-                                    className="w-full"
+                                    className="w-full bg-[#DC143C] hover:bg-red-700 text-white font-semibold py-2.5"
                                     disabled={processing}
                                     data-test="email-password-reset-link-button"
                                 >
@@ -54,16 +57,16 @@ export default function ForgotPassword({ status }: { status?: string }) {
                     )}
                 </Form>
 
-                <div className="space-x-1 text-center text-sm text-muted-foreground">
+                <div className="space-x-1 text-center text-sm text-slate-600">
                     <span>Or, return to</span>
-                    <TextLink href={login()}>log in</TextLink>
+                    <TextLink href={login()} className="text-[#1F5A96] font-semibold hover:text-[#0F2A47]">log in</TextLink>
                 </div>
             </div>
         </>
     );
 }
 
-ForgotPassword.layout = {
+ForgotPassword.layout = () => ({
     title: 'Forgot password',
     description: 'Enter your email to receive a password reset link',
-};
+});

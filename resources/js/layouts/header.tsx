@@ -12,7 +12,7 @@ export default function Header({ auth, currentTeam }: HeaderProps) {
     return (
         <>
             {/* Top Info Bar */}
-            <div className="hidden lg:flex bg-slate-50 border-b border-slate-200 py-3 px-12 justify-between items-center text-sm font-medium text-slate-600">
+            <div className="hidden items-center justify-between border-b border-slate-200 bg-slate-50 px-12 py-3 text-sm font-medium text-slate-600 lg:flex">
                 <div className="flex gap-8">
                     <span className="flex items-center gap-2">
                         <span className="text-[#DC143C]">📍</span>
@@ -28,51 +28,99 @@ export default function Header({ auth, currentTeam }: HeaderProps) {
                         <span className="text-[#DC143C]">📞</span>
                         (021) 555-0113
                     </span>
-                    <div className="flex gap-4 ml-4">
-                        <a href="#" className="hover:text-[#1F5A96] transition-colors">FB</a>
-                        <a href="#" className="hover:text-[#1F5A96] transition-colors">IG</a>
-                        <a href="#" className="hover:text-[#1F5A96] transition-colors">TW</a>
+                    <div className="ml-4 flex gap-4">
+                        <a
+                            href="#"
+                            className="transition-colors hover:text-[#1F5A96]"
+                        >
+                            FB
+                        </a>
+                        <a
+                            href="#"
+                            className="transition-colors hover:text-[#1F5A96]"
+                        >
+                            IG
+                        </a>
+                        <a
+                            href="#"
+                            className="transition-colors hover:text-[#1F5A96]"
+                        >
+                            TW
+                        </a>
                     </div>
                 </div>
             </div>
 
             {/* Navigation */}
-            <nav className="sticky top-0 z-50 bg-white border-b border-slate-100 px-6 lg:px-12 py-5 flex justify-between items-center shadow-sm">
+            <nav className="sticky top-0 z-50 flex items-center justify-between border-b border-slate-100 bg-white px-6 py-5 shadow-sm lg:px-12">
                 <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-[#DC143C] flex items-center justify-center rounded-lg">
-                        <span className="text-white text-2xl">🎓</span>
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#DC143C]">
+                        <span className="text-2xl text-white">🎓</span>
                     </div>
                     <div className="leading-none">
-                        <span className="block text-xl font-bold text-[#0F2A47]">MODERN</span>
-                        <span className="block text-xs font-semibold tracking-widest text-[#DC143C] uppercase">Academy</span>
+                        <span className="block text-xl font-bold text-[#0F2A47]">
+                            MODERN
+                        </span>
+                        <span className="block text-xs font-semibold tracking-widest text-[#DC143C] uppercase">
+                            Academy
+                        </span>
                     </div>
                 </div>
 
-                <div className="hidden lg:flex items-center gap-10 font-medium text-slate-700">
-                    <a href="#" className="text-[#1F5A96] border-b-2 border-[#1F5A96]">Beranda</a>
-                    <a href="#" className="hover:text-[#1F5A96] transition-colors">Tentang</a>
-                    <a href="#" className="hover:text-[#1F5A96] transition-colors">Akademik</a>
-                    <a href="#" className="hover:text-[#1F5A96] transition-colors">Fasilitas</a>
-                    <a href="#" className="hover:text-[#1F5A96] transition-colors">Berita</a>
+                <div className="hidden items-center gap-10 font-medium text-slate-700 lg:flex">
+                    <a
+                        href="/"
+                        className="border-b-2 border-[#1F5A96] text-[#1F5A96]"
+                    >
+                        Beranda
+                    </a>
+                    <a
+                        href="/tentang-kami"
+                        className="transition-colors hover:text-[#1F5A96]"
+                    >
+                        Tentang Kami
+                    </a>
+                    <a
+                        href="/akademik"
+                        className="transition-colors hover:text-[#1F5A96]"
+                    >
+                        Akademik
+                    </a>
+                    <a
+                        href="/fasilitas"
+                        className="transition-colors hover:text-[#1F5A96]"
+                    >
+                        Fasilitas
+                    </a>
+                    <a
+                        href="/berita"
+                        className="transition-colors hover:text-[#1F5A96]"
+                    >
+                        Berita
+                    </a>
                 </div>
 
                 <div className="flex items-center gap-4">
                     {isLoggedIn ? (
                         <Link
-                            href={currentTeam?.slug ? `/${currentTeam.slug}/dashboard` : '/'}
-                            className="hidden sm:flex bg-[#DC143C] text-white px-6 py-2.5 rounded-full font-semibold hover:bg-red-700 transition-colors"
+                            href={
+                                currentTeam?.slug
+                                    ? `/${currentTeam.slug}/dashboard`
+                                    : '/'
+                            }
+                            className="hidden rounded-full bg-[#DC143C] px-6 py-2.5 font-semibold text-white transition-colors hover:bg-red-700 sm:flex"
                         >
                             Dashboard
                         </Link>
                     ) : (
                         <Link
                             href="/register"
-                            className="hidden sm:flex bg-[#DC143C] text-white px-6 py-2.5 rounded-full font-semibold hover:bg-red-700 transition-colors"
+                            className="hidden rounded-full bg-[#DC143C] px-6 py-2.5 font-semibold text-white transition-colors hover:bg-red-700 sm:flex"
                         >
                             Daftar Sekarang
                         </Link>
                     )}
-                    <button className="lg:hidden text-2xl text-[#0F2A47]">
+                    <button className="text-2xl text-[#0F2A47] lg:hidden">
                         ☰
                     </button>
                 </div>

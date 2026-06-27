@@ -64,16 +64,22 @@ export default function TwoFactorChallenge() {
                         <>
                             {showRecoveryInput ? (
                                 <>
-                                    <Input
-                                        name="recovery_code"
-                                        type="text"
-                                        placeholder="Enter recovery code"
-                                        autoFocus={showRecoveryInput}
-                                        required
-                                    />
-                                    <InputError
-                                        message={errors.recovery_code}
-                                    />
+                                    <div className="grid gap-3">
+                                        <Label htmlFor="recovery_code" className="text-[#0F2A47] font-semibold">
+                                            Recovery code
+                                        </Label>
+                                        <Input
+                                            name="recovery_code"
+                                            type="text"
+                                            placeholder="Enter recovery code"
+                                            autoFocus={showRecoveryInput}
+                                            required
+                                            className="border-slate-300 focus:border-[#1F5A96] focus:ring-[#1F5A96]"
+                                        />
+                                        <InputError
+                                            message={errors.recovery_code}
+                                        />
+                                    </div>
                                 </>
                             ) : (
                                 <div className="flex flex-col items-center justify-center space-y-3 text-center">
@@ -106,17 +112,17 @@ export default function TwoFactorChallenge() {
 
                             <Button
                                 type="submit"
-                                className="w-full"
+                                className="w-full bg-[#DC143C] hover:bg-red-700 text-white font-semibold py-2.5"
                                 disabled={processing}
                             >
                                 Continue
                             </Button>
 
-                            <div className="text-center text-sm text-muted-foreground">
+                            <div className="text-center text-sm text-slate-600">
                                 <span>or you can </span>
                                 <button
                                     type="button"
-                                    className="cursor-pointer text-foreground underline decoration-neutral-300 underline-offset-4 transition-colors duration-300 ease-out hover:decoration-current! dark:decoration-neutral-500"
+                                    className="cursor-pointer text-[#1F5A96] font-semibold underline decoration-[#1F5A96] underline-offset-4 transition-colors duration-300 ease-out hover:text-[#0F2A47] hover:decoration-[#0F2A47]"
                                     onClick={() =>
                                         toggleRecoveryMode(clearErrors)
                                     }

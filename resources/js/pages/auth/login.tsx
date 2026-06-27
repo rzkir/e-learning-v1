@@ -46,8 +46,10 @@ export default function Login({
                 {({ processing, errors }) => (
                     <>
                         <div className="grid gap-6">
-                            <div className="grid gap-2">
-                                <Label htmlFor="email">Email address</Label>
+                            <div className="grid gap-3">
+                                <Label htmlFor="email" className="text-[#0F2A47] font-semibold">
+                                    Email address
+                                </Label>
                                 <Input
                                     id="email"
                                     type="email"
@@ -57,17 +59,20 @@ export default function Login({
                                     tabIndex={1}
                                     autoComplete="email"
                                     placeholder="email@example.com"
+                                    className="border-slate-300 focus:border-[#1F5A96] focus:ring-[#1F5A96]"
                                 />
                                 <InputError message={errors.email} />
                             </div>
 
-                            <div className="grid gap-2">
+                            <div className="grid gap-3">
                                 <div className="flex items-center">
-                                    <Label htmlFor="password">Password</Label>
+                                    <Label htmlFor="password" className="text-[#0F2A47] font-semibold">
+                                        Password
+                                    </Label>
                                     {canResetPassword && (
                                         <TextLink
                                             href={request()}
-                                            className="ml-auto text-sm"
+                                            className="ml-auto text-sm text-[#DC143C] hover:text-[#1F5A96]"
                                             tabIndex={5}
                                         >
                                             Forgot password?
@@ -81,6 +86,7 @@ export default function Login({
                                     tabIndex={2}
                                     autoComplete="current-password"
                                     placeholder="Password"
+                                    className="border-slate-300 focus:border-[#1F5A96] focus:ring-[#1F5A96]"
                                 />
                                 <InputError message={errors.password} />
                             </div>
@@ -90,13 +96,16 @@ export default function Login({
                                     id="remember"
                                     name="remember"
                                     tabIndex={3}
+                                    className="border-slate-300 text-[#DC143C] focus:ring-[#1F5A96]"
                                 />
-                                <Label htmlFor="remember">Remember me</Label>
+                                <Label htmlFor="remember" className="text-sm text-slate-600">
+                                    Remember me
+                                </Label>
                             </div>
 
                             <Button
                                 type="submit"
-                                className="mt-4 w-full"
+                                className="mt-2 w-full bg-[#DC143C] hover:bg-red-700 text-white font-semibold py-2.5"
                                 tabIndex={4}
                                 disabled={processing}
                                 data-test="login-button"
@@ -106,7 +115,7 @@ export default function Login({
                             </Button>
                         </div>
 
-                        <div className="text-center text-sm text-muted-foreground">
+                        <div className="text-center text-sm text-slate-600">
                             Don't have an account?{' '}
                             <TextLink
                                 href={register({
@@ -116,6 +125,7 @@ export default function Login({
                                 })}
                                 data-test="register-link"
                                 tabIndex={5}
+                                className="text-[#1F5A96] font-semibold hover:text-[#0F2A47]"
                             >
                                 Sign up
                             </TextLink>
@@ -133,7 +143,7 @@ export default function Login({
     );
 }
 
-Login.layout = {
+Login.layout = () => ({
     title: 'Log in to your account',
     description: 'Enter your email and password below to log in',
-};
+});

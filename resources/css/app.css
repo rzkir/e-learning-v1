@@ -66,6 +66,10 @@
 }
 
 :root {
+    --primary-blue: #1F5A96;
+    --primary-red: #DC143C;
+    --dark-navy: #0F2A47;
+
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
     --card: oklch(1 0 0);
@@ -101,8 +105,33 @@
     --sidebar-ring: oklch(0.87 0 0);
 }
 
+.hover-scale {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hover-scale:hover {
+    transform: translateY(-8px);
+}
+
+.facility-gradient {
+    background: linear-gradient(to top, rgba(15, 42, 71, 0.95) 0%, rgba(15, 42, 71, 0.4) 50%, transparent 100%);
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.form-input:focus {
+    border-color: #1f5a96;
+    box-shadow: 0 0 0 3px rgba(31, 90, 150, 0.1);
+}
+
 .dark {
-    --background: oklch(0.145 0 0);
     --foreground: oklch(0.985 0 0);
     --card: oklch(0.145 0 0);
     --card-foreground: oklch(0.985 0 0);
